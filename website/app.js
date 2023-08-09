@@ -51,9 +51,9 @@ async function updateUI() {
     const request = await fetch('/projectData');
     try {
         const allData = await request.json();
-        document.querySelector('#temp').innerHTML = Math.round(allData.temperature) + ' °F'
-        document.querySelector('#date').innerHTML = allData.date;
-        document.querySelector('#content').innerHTML = allData.userResponse;
+        document.querySelector('#temp').innerHTML = 'Temperature: ' + Math.round(allData.temperature) + ' °F'
+        document.querySelector('#date').innerHTML = 'Date: ' + allData.date;
+        document.querySelector('#content').innerHTML = 'Mood: ' + allData.userResponse;
     } catch (error) {
         console.log('error', error);
     }
